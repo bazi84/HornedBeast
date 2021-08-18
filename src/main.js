@@ -14,9 +14,8 @@ class Main extends Component {
   render() {
     return (
       <constainer>
-        
         <h1>The Best Wild Beast {this.props.message}</h1>
-        <Row>
+        <Row >
           <Col>
         <BeastImage image_url={beastImages[0].image_url}/>
           </Col>
@@ -58,7 +57,8 @@ class BeastImage extends Component {
   render() {
     return (
       <div onClick={this.clickHandler}>
-     <Image src={this.props.image_url rounded fluid/>
+        <img src={this.props.image_url} alt= "some horned beast"/>
+     {/* <Image src={this.props.image_url rounded fluid/> */}
       <p>{this.state.status}</p>
     </div>
     );
