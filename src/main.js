@@ -17,19 +17,19 @@ class Main extends Component {
         <h1>The Best Wild Beast {this.props.message}</h1>
         <Row >
           <Col>
-        <BeastImage image_url={beastImages[0].image_url}/>
+        <BeastImage image_url={beastImages[0].image_url} name="Buraaq" keyFreature="superfast"/>
           </Col>
           <Col>
-        <BeastImage image_url={beastImages[1].image_url}/>
+        <BeastImage image_url={beastImages[1].image_url} name="Rhino" keyFreature="supermighty"/>
         </Col>
         </Row>
 
         <Row>
         <Col>
-        <BeastImage image_url={beastImages[2].image_url}/>
+        <BeastImage image_url={beastImages[2].image_url} name="Lighting" keyFreature="flyingHorse"/>
         </Col>
         <Col>
-        <BeastImage image_url={beastImages[3].image_url}/>
+        <BeastImage image_url={beastImages[3].image_url} name="ToyBuraaq" keyFreature="superfun"/>
         </Col>
         </Row>
 
