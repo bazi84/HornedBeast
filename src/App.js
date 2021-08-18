@@ -1,23 +1,18 @@
-import './App.css';
-import beastImages from './data.json'
+import beastImages from './beastData.json'
 import Header from './header.js';
 import Footer from './footer.js';
 import Main from './main.js';
 
 function App() {
-  return (
+  console.log(beastImages);
+  return ( 
     <>
       <Header title= "Horned Beasts"/>
-      {/* <Main message="beastImages"/> */}
+      <Main hornedBeast= {beastImages}/>
       <Footer author= "Abdulkadir Sheikh"/>
     </>
+    
   );
   } 
-    
-  class BeastImage extends Component {
-    render() {
-      return <img src={this.props.Image_url} alt="Honred Beast" />
-    }
-  }
-
+  
 export default App;
