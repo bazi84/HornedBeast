@@ -1,11 +1,14 @@
-function Footer (props) {
-  return (
-  <>
-    <h2>
-      {props.author}
-    </h2>
-  </>
-  );
-}  
+import React, { Component } from 'react'
 
-export default Footer;
+ class Footer extends Component {
+    render() {
+        return (
+            <div>
+                <span>Abdulkadir Sheikh</span>
+
+            </div>
+        )
+    }
+}
+
+export default Footer

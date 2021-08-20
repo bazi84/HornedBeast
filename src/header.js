@@ -1,11 +1,15 @@
-function Header(props) {
-  return (
-  <>
-    <h1>
-    {props.title}
-    </h1>
-  </>
-  );
+import React, { Component } from 'react'
+// import { Form } from 'react-bootstrap';
+
+ class Header extends Component {
+    render() {
+        return (
+            <div>
+               <h1>Welcome To Gallary of HornedBeasts</h1> 
+      
+            </div>
+        )
+    }
 }
 
-export default Header;
+export default Header

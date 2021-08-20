@@ -1,68 +1,43 @@
-import { render } from "@testing-library/react";
-import { Component } from "react";
-import beastImages from './beastData.json'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Image from 'react-bootstrap/Image'
-import {
-  Container,
-  Col,
-  Row
-} from 'react-bootstrap';
+import React from 'react';
+import HornedBeast from './HornedBeast';
+import CardColumns from 'react-bootstrap/CardColumns'
+import './Main.css';
 
 
-class Main extends Component {
-  render() {
-    return (
-      <constainer>
-        <h1>The Best Wild Beast {this.props.message}</h1>
-        <Row >
-          <Col>
-        <BeastImage image_url={beastImages[0].image_url} name="Buraaq" keyFreature="superfast"/>
-          </Col>
-          <Col>
-        <BeastImage image_url={beastImages[1].image_url} name="Rhino" keyFreature="supermighty"/>
-        </Col>
-        </Row>
+class Main extends React.Component {
+    render() {
 
-        <Row>
-        <Col>
-        <BeastImage image_url={beastImages[2].image_url} name="Lighting" keyFreature="flyingHorse"/>
-        </Col>
-        <Col>
-        <BeastImage image_url={beastImages[3].image_url} name="ToyBuraaq" keyFreature="superfun"/>
-        </Col>
-        </Row>
 
-      </constainer>
-      
-    );
-  }
-}
 
-class BeastImage extends Component {
+        return (
+            <main>
+                <CardColumns>
+                    {
+                        !this.props.filteredBeast ? this.props.beast.map((beast, index) => (
+                            <HornedBeast
+                                name={beast.keyword}
+                                title={beast.title}
+                                image_url={beast.image_url}
+                                description={beast.description}
+                                key={index}
+                                handleClick={this.props.handleClick}
+                            />
+                        )) : this.props.filteredBeast.map((beast, index) => (
+                            <HornedBeast
+                                name={beast.keyword}
+                                title={beast.title}
+                                image_url={beast.image_url}
+                                description={beast.description}
+                                key={index}
+                                handleClick={this.props.handleClick}
+                            />
+                        ))
+                    }
 
-  constructor(props) {
-    super(constructor);
-    this.state = {
-      "status": "Like"
+                </CardColumns>
+            </main>
+        );
     }
-  }
-  clickHandler = () => {
-    const newStatus = this.state.status === "Nay" ? "Like" : "Nay";
-    this.setState({
-      status: newStatus
-    });
-  }
-  
-  render() {
-    return (
-      <div onClick={this.clickHandler}>
-        <img src={this.props.image_url} alt= "some horned beast"/>
-     {/* <Image src={this.props.image_url rounded fluid/> */}
-      <p>{this.state.status}</p>
-    </div>
-    );
-  }
 }
 
 export default Main;
